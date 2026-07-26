@@ -14,7 +14,12 @@ This file gives Claude Code project-level context for `cem-agent-hub`.
 
 ```
 cem-agent-hub/
-├── skills/              Cem's own skills (agentskills.io format)
+├── skills/              Cem's own skills (by domain)
+│   ├── placeholder-skill/
+│   ├── mobile/
+│   ├── engineering/
+│   ├── typescript/
+│   └── react-native/
 ├── vendor/              Vendored copies of third-party skill repos
 ├── plugins/             Plugin bundles combining own + vendor skills
 ├── .claude-plugin/      Claude Code marketplace definition
@@ -25,7 +30,7 @@ cem-agent-hub/
 
 Three layers, built up in order:
 
-1. **Own skills** (`skills/`) — currently just `skills/placeholder-skill/`, a scaffold to duplicate when authoring a real skill. Not a functioning skill itself.
+1. **Own skills** (`skills/`) — grouped by domain (`mobile/`, `engineering/`, `typescript/`, `react-native/`). Skills live at `skills/<domain>/<skill-name>/`. `skills/placeholder-skill/` remains the scaffold to duplicate when authoring.
 2. **Vendor skills** (`vendor/`) — third-party skills vendored in full (not submodules). Each upstream maps to `vendor/<org>/` via `scripts/sync-vendor.sh`. See `vendor/README.md` for the current list.
 3. **Plugin bundles** (`plugins/`) — curated combinations of own + vendor skills packaged as installable Claude Code plugins. None exist yet; they get created once there are enough real skills to combine.
 
@@ -39,11 +44,11 @@ Key rules:
 - `description` describes what the skill does AND when to use it — this is what agents scan at startup to decide activation. Max 1024 chars.
 - Skill names must stay globally unique across the whole repo, even across domain-grouping subfolders (the `name` field has no namespace).
 - Keep the SKILL.md body under ~5000 tokens; move overflow into `references/`.
-- Do not create domain-grouping folders (`backend/`, `mobile/`, `shared/`) until there are enough skills to justify it.
+- Domain folders are `mobile/`, `engineering/`, `typescript/`, and `react-native/`. Place each skill under the matching domain: `skills/<domain>/<skill-name>/`.
 
 ## Authoring a new skill
 
-1. Duplicate `skills/placeholder-skill/` and rename the folder.
+1. Duplicate `skills/placeholder-skill/` into the right domain folder and rename it (`skills/<domain>/<skill-name>/`).
 2. Update the `name` field in `SKILL.md` to match the new folder name exactly.
 3. Write a specific `description` covering what the skill does and when to use it.
 4. Replace the body with real instructions: overview → when to use → numbered steps → examples.

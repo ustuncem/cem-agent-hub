@@ -5,8 +5,8 @@ alwaysApply: true
 
 This repo is `cem-agent-hub`, a hub of Agent Skills following the agentskills.io standard.
 
-- Own skills live under `skills/<skill-name>/SKILL.md`.
+- Own skills live under `skills/<domain>/<skill-name>/SKILL.md` (domains: `mobile`, `engineering`, `typescript`, `react-native`).
 - Vendored third-party skills live under `vendor/<org>/<skill-name>/SKILL.md`.
-- Cursor only scans skill directories one level deep, so avoid relying on nested domain grouping here without also flattening or symlinking for Cursor.
+- Cursor only scans skill directories one level deep, so nested domain skills are not auto-discovered here without flattening or symlinking.
 
 When a task matches a skill's `description`, read the corresponding `SKILL.md` (and any `references/` files it points to) before acting.

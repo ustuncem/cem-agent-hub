@@ -4,7 +4,7 @@ A centralized hub for AI agent skills and plugin bundles, following the [Agent S
 
 ## What's here
 
-- **`skills/`** — Cem's own skills. Currently just `placeholder-skill/`, a scaffold to duplicate when authoring a real skill.
+- **`skills/`** — Cem's own skills, grouped by domain (`mobile/`, `engineering/`, `typescript/`, `react-native/`). Skills live under `skills/<domain>/<skill-name>/`. Also includes `placeholder-skill/` at the root as a scaffold to duplicate when authoring. **Cursor only scans one level deep**, so nested domain skills are not auto-discovered there yet — Claude Code and `npx skills add` scan recursively.
 - **`vendor/`** — Third-party skills, vendored in full (not submodules). Each org gets its own `vendor/<org>/` folder, synced from upstream via `scripts/sync-vendor.sh`.
 - **`plugins/`** — Curated bundles of own + vendor skills, packaged as installable Claude Code plugins. None exist yet — they'll be added once there are enough real skills to combine.
 
@@ -18,14 +18,20 @@ Vendored sources:
 
 ```
 cem-agent-hub/
-├── skills/                # Cem's own skills
-│   └── placeholder-skill/
+├── skills/                # Cem's own skills (by domain)
+│   ├── placeholder-skill/
+│   ├── mobile/
+│   ├── engineering/
+│   ├── typescript/
+│   │   └── typescript-naming-interfaces/
+│   └── react-native/
 ├── vendor/                # Vendored third-party skills
 │   ├── mattpocock/
 │   ├── software-mansion-labs/
 │   ├── callstackincubator/
 │   ├── vercel-labs/
-│   └── expo/
+│   ├── expo/
+│   └── margelo/
 ├── plugins/                # Plugin bundles (empty for now)
 ├── .claude-plugin/         # Claude Code marketplace definition
 ├── .agents/plugins/        # Codex-compatible marketplace definition
@@ -60,7 +66,7 @@ cp -r cem-agent-hub/skills/placeholder-skill ~/.claude/skills/
 
 ## Authoring a skill
 
-Duplicate `skills/placeholder-skill/`, rename it, and update the `SKILL.md` frontmatter (`name` must match the new folder name) and body. See `CLAUDE.md` for the full authoring checklist.
+Duplicate `skills/placeholder-skill/`, place it under the right domain folder (`skills/<domain>/<skill-name>/`), and update the `SKILL.md` frontmatter (`name` must match the new folder name) and body. See `CLAUDE.md` for the full authoring checklist.
 
 ## Vendor sync
 
@@ -79,9 +85,9 @@ bash scripts/validate.sh
 
 Validates every `SKILL.md` under `skills/` and `vendor/` against the agentskills.io spec (via `npx skills-ref validate` if available, otherwise a basic frontmatter check).
 
-## Organizing skills into domains (future)
+## Organizing skills into domains
 
-Once there are enough skills, they can be grouped into domain subfolders, e.g. `skills/backend/api-structure/SKILL.md`, `skills/mobile/native-ui-usage/SKILL.md`. This works natively on Claude Code, Hermes, and `npx skills add` (recursive scan). **Cursor only scans one level deep**, so nested skills may need to be symlinked or copied flat for Cursor to discover them. Skill names must remain globally unique regardless of which folder they sit in, since the `name` field has no namespace.
+Own skills are grouped under domain subfolders: `mobile/`, `engineering/`, `typescript/`, `react-native/`. Example: `skills/typescript/typescript-naming-interfaces/SKILL.md`. This works natively on Claude Code, Hermes, and `npx skills add` (recursive scan). **Cursor only scans one level deep**, so nested skills may need to be symlinked or copied flat for Cursor to discover them. Skill names must remain globally unique regardless of which folder they sit in, since the `name` field has no namespace.
 
 ## License
 
