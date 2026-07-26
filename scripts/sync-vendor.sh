@@ -36,6 +36,7 @@ TARGETS=(
   "callstackincubator/agent-skills callstackincubator"
   "vercel-labs/agent-skills vercel-labs"
   "expo/skills expo plugins/expo/skills"
+  "margelo/react-native-skills margelo"
 )
 
 sync_target() {

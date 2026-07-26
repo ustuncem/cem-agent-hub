@@ -16,6 +16,7 @@ This directory holds **vendored copies** of third-party Agent Skills. These are 
 | `callstackincubator/`    | [`callstackincubator/agent-skills`](https://github.com/callstackincubator/agent-skills) |
 | `vercel-labs/`           | [`vercel-labs/agent-skills`](https://github.com/vercel-labs/agent-skills)               |
 | `expo/`                  | [`expo/skills`](https://github.com/expo/skills)                                         |
+| `margelo/`               | [`margelo/react-native-skills`](https://github.com/margelo/react-native-skills)         |
 
 Each entry is a full copy of that repo's skills directory (`skills/`, or `plugins/expo/skills/` for Expo). Commit SHAs are recorded in `vendor/VERSIONS.txt`.
 
