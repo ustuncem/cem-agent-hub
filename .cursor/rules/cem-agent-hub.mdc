@@ -1,0 +1,12 @@
+---
+description: Load Agent Skills from this repo's skills/ directory
+alwaysApply: true
+---
+
+This repo is `cem-agent-hub`, a hub of Agent Skills following the agentskills.io standard.
+
+- Own skills live under `skills/<skill-name>/SKILL.md`.
+- Vendored third-party skills live under `vendor/<org>/<skill-name>/SKILL.md`.
+- Cursor only scans skill directories one level deep, so avoid relying on nested domain grouping here without also flattening or symlinking for Cursor.
+
+When a task matches a skill's `description`, read the corresponding `SKILL.md` (and any `references/` files it points to) before acting.
