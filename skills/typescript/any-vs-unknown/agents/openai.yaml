@@ -1,0 +1,3 @@
+interface:
+  display_name: "Any vs Unknown"
+  short_description: "Prefer unknown; treat any as an escape hatch"
