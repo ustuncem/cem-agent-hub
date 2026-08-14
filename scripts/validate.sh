@@ -10,6 +10,12 @@ set -uo pipefail
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$REPO_ROOT"
 
+echo "==> Checking instruction-tier adapters"
+if ! bash "$REPO_ROOT/scripts/sync-adapters.sh" --check; then
+  exit 1
+fi
+echo ""
+
 if command -v npx >/dev/null 2>&1 && npx --yes skills-ref --version >/dev/null 2>&1; then
   echo "==> Using skills-ref validate (per skill)"
   FAILED=0
