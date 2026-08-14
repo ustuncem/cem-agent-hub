@@ -1,0 +1,3 @@
+interface:
+  display_name: "Placeholder Skill"
+  short_description: "Scaffold for authoring a new skill"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Interfaces vs Types"
+  short_description: "Choose interface or type by shape"
