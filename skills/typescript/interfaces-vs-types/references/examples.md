@@ -4,7 +4,7 @@ Companion to [`interfaces-vs-types`](../SKILL.md). Load when the decision proced
 
 ## Object contracts
 
-Prefer `interface` for named object structures:
+Use interface until you need type — new named object structures are interfaces:
 
 ```ts
 interface User {
@@ -13,7 +13,7 @@ interface User {
 }
 ```
 
-A simple object type alias is still valid — leave it when editing unless composition, implementation, augmentation, or local convention requires a change:
+An existing object type alias is still valid — leave it when editing unless composition, implementation, augmentation, or a concrete reason requires a change:
 
 ```ts
 type User = {
@@ -22,7 +22,7 @@ type User = {
 };
 ```
 
-Prefer `interface` when the object will be extended, implemented by a class, exposed as an augmentable public API, or composed from multiple object contracts.
+Always prefer `interface` for library or ambient public APIs so consumers can extend via declaration merging when definitions are missing.
 
 ## Object composition
 
@@ -91,9 +91,9 @@ type UserId = string & {
 type EventHandler<T> = (event: T) => void;
 ```
 
-## React component props
+## React component props and state
 
-Extending an object contract:
+Object-shaped props/state — interface until you need type:
 
 ```ts
 interface ButtonProps extends BaseButtonProps {
@@ -101,7 +101,7 @@ interface ButtonProps extends BaseButtonProps {
 }
 ```
 
-Mutually exclusive variants:
+Mutually exclusive variants (need type):
 
 ```ts
 type ButtonProps =

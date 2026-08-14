@@ -40,4 +40,4 @@ Refactor an existing definition only when at least one holds:
 - IntelliSense or compiler performance is measurably affected
 - The definition is already being modified for another reason
 
-Optimize measured complexity, not syntax preference. Project-specific framework notes (e.g. Next.js) do not justify a universal TypeScript keyword rule.
+Optimize measured complexity, not syntax preference. At scale, interfaces can help language-service performance for object contracts — take that with a grain of salt and measure. Project-specific framework notes (e.g. Next.js) do not override **use interface until you need type**.
