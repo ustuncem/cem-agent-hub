@@ -93,10 +93,12 @@ Targets are configured in `scripts/sync-vendor.sh`. Each upstream's skills direc
 ## Validation
 
 ```bash
-bash scripts/validate.sh
+bash scripts/validate.sh              # own skills under skills/ (default)
+bash scripts/validate.sh --all        # also vendor/ (basic frontmatter check)
+bash scripts/validate.sh PATH...      # specific skill dirs, SKILL.md files, or trees
 ```
 
-Checks that generated instruction-tier adapters match `adapters/skill-discovery.md`, then validates every `SKILL.md` under `skills/` and `vendor/` against the agentskills.io spec (via `npx skills-ref validate` if available, otherwise a basic frontmatter check).
+Checks that generated instruction-tier adapters match `adapters/skill-discovery.md`, then validates `SKILL.md` files. Default is `skills/` only — vendor copies are skipped unless you pass `--all` or `--vendor`. Own skills use `skills-ref` in one process when available; vendor uses a basic frontmatter check because those files are upstream copies.
 
 ## Organizing skills into domains
 

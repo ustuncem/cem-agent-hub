@@ -95,7 +95,8 @@ Once real skills exist, create a `plugin.json` per bundle under `plugins/<bundle
 Before committing changes to skills or vendor content:
 
 ```bash
-bash scripts/validate.sh
+bash scripts/validate.sh              # own skills under skills/ (default)
+bash scripts/validate.sh --all        # also vendor/
 ```
 
-This first checks that generated instruction-tier adapters match `adapters/skill-discovery.md`, then runs `npx skills-ref validate` if available, otherwise a basic frontmatter check (SKILL.md exists, has `name`/`description`, name matches directory, formats are within spec).
+This first checks that generated instruction-tier adapters match `adapters/skill-discovery.md`, then validates `SKILL.md` files. Default is `skills/` only. Own skills use `skills-ref` in one process when available, otherwise a basic frontmatter check (SKILL.md exists, has `name`/`description`, name matches directory, formats are within spec). Pass `--all` after a vendor sync; vendor copies get the basic check only.
