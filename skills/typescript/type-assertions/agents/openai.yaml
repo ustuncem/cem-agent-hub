@@ -1,0 +1,3 @@
+interface:
+  display_name: "Type Assertions"
+  short_description: "Assert types only when TypeScript cannot infer them"
