@@ -1,0 +1,3 @@
+interface:
+  display_name: "Optional vs Undefined"
+  short_description: "Treat missing keys and undefined values as different"
