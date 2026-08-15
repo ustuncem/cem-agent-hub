@@ -1,0 +1,3 @@
+interface:
+  display_name: "Annotations vs Satisfies"
+  short_description: "Annotate known contracts; use satisfies to keep inference"
