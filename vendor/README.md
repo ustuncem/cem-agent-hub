@@ -17,8 +17,14 @@ This directory holds **vendored copies** of third-party Agent Skills. These are 
 | `vercel-labs/`           | [`vercel-labs/agent-skills`](https://github.com/vercel-labs/agent-skills)               |
 | `expo/`                  | [`expo/skills`](https://github.com/expo/skills)                                         |
 | `margelo/`               | [`margelo/react-native-skills`](https://github.com/margelo/react-native-skills)         |
+| `dietrichgebert/`        | [`DietrichGebert/ponytail`](https://github.com/DietrichGebert/ponytail)                 |
+| `juliusbrussee/`         | [`JuliusBrussee/caveman`](https://github.com/JuliusBrussee/caveman)                     |
+| `ayghri/`                | [`ayghri/i-have-adhd`](https://github.com/ayghri/i-have-adhd)                           |
+| `humanlayer/`            | [`humanlayer/skills`](https://github.com/humanlayer/skills) (flattened plugin skills)   |
+| `estevg/`                | [`estevg/skills`](https://github.com/estevg/skills) (flattened plugin skills)         |
+| `tovimx/`                | [`tovimx/maestro-mobile-testing-skill`](https://github.com/tovimx/maestro-mobile-testing-skill) |
 
-Each entry is a full copy of that repo's skills directory (`skills/`, or `plugins/expo/skills/` for Expo). Commit SHAs are recorded in `vendor/VERSIONS.txt`.
+Each entry is a full copy of that repo's skills directory (`skills/`, `plugins/expo/skills/` for Expo, flattened `plugins/*/skills/*` for Humanlayer/estevg, or repo-root `SKILL.md` for Maestro). `callstackincubator/` also merges [`callstackincubator/react-native-harness`](https://github.com/callstackincubator/react-native-harness). Commit SHAs are recorded in `vendor/VERSIONS.txt`.
 
 ## Updating
 
