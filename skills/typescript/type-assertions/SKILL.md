@@ -3,9 +3,10 @@ name: type-assertions
 description: >
   Use TypeScript type assertions (as Type) only when the compiler
   cannot infer a type the developer already knows. Use when writing
-  or removing as Type, as any, as unknown as Type, angle-bracket
-  assertions, or as const; when silencing type errors; or when
-  typing untrusted or external data instead of validating it.
+  or removing as Type, as any, as unknown as Type, or angle-bracket
+  assertions; when silencing type errors; or when typing untrusted
+  or external data instead of validating it. For literal widening
+  and as const, use literal-types-and-as-const.
 ---
 
 # Type Assertions
@@ -49,7 +50,7 @@ When encountering `as Type`:
 3. Keep a remaining assertion only when TypeScript cannot express the fact, and keep it next to the reason.
 4. Replace `as any` / `as unknown as Type` unless the surrounding types cannot be fixed.
 
-`as const` is a const assertion (literal narrowing), not a type override. Prefer it over `as Type` when the goal is to keep a literal or readonly tuple.
+`as const` is a const assertion (literal narrowing), not a type override. Prefer it over `as Type` when the goal is to keep a literal or readonly tuple. For when to use it and the readonly tradeoffs, see `literal-types-and-as-const`.
 
 ## Examples
 

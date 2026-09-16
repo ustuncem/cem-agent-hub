@@ -1,0 +1,3 @@
+interface:
+  display_name: "Literal Types and as const"
+  short_description: "Preserve literals with as const only when exact values matter"
