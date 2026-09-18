@@ -1,0 +1,3 @@
+interface:
+  display_name: "Narrowing and Type Guards"
+  short_description: "Narrow from runtime evidence; use semantic reusable guards"
