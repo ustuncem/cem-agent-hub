@@ -1,0 +1,3 @@
+interface:
+  display_name: "Discriminated Unions"
+  short_description: "Model exclusive variants with a shared literal discriminant"
