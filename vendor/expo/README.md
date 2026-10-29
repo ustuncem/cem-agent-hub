@@ -31,7 +31,6 @@ Free, open-source Expo SDK and React Native skills.
 | `expo-examples` | The `expo/examples` repo of `with-*` integrations to adapt or scaffold from. |
 | `expo-app-clip` | iOS App Clip targets, AASA files, associated domains, and Smart App Banners. |
 | `expo-upgrade` | Expo SDK upgrades, dependency conflicts, deprecated packages, and cache cleanup. |
-| `expo-skill-feedback` | Sharing what worked or fell short across Expo, its skills, docs, CLIs, or MCP, and controlling opt-in usage telemetry. |
 
 ## Services & paid distribution
 
@@ -50,7 +49,7 @@ Skills whose core purpose uses paid Expo Application Services (EAS). Each `SKILL
 ## Adding a skill
 
 1. Create `skills/<skill-name>/SKILL.md` (one level deep - do not nest under a category folder, or it will not be discovered).
-2. Write a frontmatter `description` that says what the skill does and when to use it.
+2. Write a frontmatter `description` that says what the skill does and when to use it. Do not add a `version` key. Official skill validators reject it.
 3. For a services skill, open the body with a costs/plan-limits callout right after the H1.
 4. Add the skill to the table above, to `skills.sh.json`, and to the root and plugin `README.md` lists.
-5. Bump the version in all four plugin manifests (see `CONTRIBUTING.md`).
+5. Bump the version in both plugin manifests (see `CONTRIBUTING.md`).
